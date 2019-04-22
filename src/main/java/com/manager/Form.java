@@ -24,6 +24,21 @@ public class Form {
             StringWriter writer = new StringWriter();
 
             try {
+                Template formTemplate = configuration.getTemplate("templates/form.ftl");
+
+                formTemplate.process(null, writer);
+            } catch (Exception e) {
+                Spark.halt(500);
+            }
+
+            return writer;
+        });
+
+        Spark.get("/manager", (request, response) -> {
+
+            StringWriter writer = new StringWriter();
+
+            try {
                 Template formTemplate = configuration.getTemplate("templates/index.ftl");
 
                 formTemplate.process(null, writer);
