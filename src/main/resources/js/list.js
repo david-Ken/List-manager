@@ -30,8 +30,8 @@ $(".fa-plus").on("click", function() {
   $("input[type='text']").fadeToggle();
 });
 
-function createList(event) {
-  event.preventDefault();
+function createList(e) {
+  e.preventDefault();
   const TEMPLATE = `
      <div class="col-lg-4 my-4">
           <div id="list-wrapper ml-2">

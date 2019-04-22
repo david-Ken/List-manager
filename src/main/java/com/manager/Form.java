@@ -14,9 +14,7 @@ public class Form {
     public static void main(String[] args) {
         final Configuration configuration = new Configuration(new Version(2, 3, 0));
         configuration.setClassForTemplateLoading(Form.class, "/");
-     //   Spark.get("/hello", (req, res) -> "Hello World");
 
-       // Spark.staticFiles.location("/css");
 
         Spark.staticFileLocation("/");
         Spark.get("/", (request, response) -> {
